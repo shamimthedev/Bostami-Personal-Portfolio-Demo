@@ -1,0 +1,160 @@
+/* All Common CSS Start  */
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: "Poppins", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+  margin: 0;
+  padding: 0;
+  line-height: 0.8;
+}
+
+a{
+  text-decoration: none;
+  display: inline-block;
+}
+/* All Common CSS End  */
+
+/* Header Part CSS Start  */
+
+.navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 50px;
+}
+
+.nav-link{
+  font-size: 13px;
+  font-weight: 500;
+  background-color: #fff;
+  margin-right: 15px;
+  border-radius: 10px;
+  transition: .5s;
+}
+
+#navbarNav ul li a{
+  padding: 10px 15px;
+}
+
+i{
+  font-size: 18px;
+  margin-right: 6px;
+}
+
+.nav-link:hover{
+  color: white;
+  background: linear-gradient(97deg, #fa5252, #dd2476);
+}
+
+.navbar-toggle-icon{
+  background-color: #fff;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+
+.navbar-toggle-icon i{
+  position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.navbar-toggle-icon:hover {
+  color: white;
+  background: linear-gradient(97deg, #fa5252, #dd2476);
+}
+/* Header Part CSS End  */
+
+/* Banner Part CSS Start  */
+#bannerPart{
+  background-image: url(../images/asset\ 3.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bannerContent{
+  text-align: center;
+  padding-top: 200px;
+  padding-bottom: 25px;
+}
+
+.bannerContent img{
+  border-radius: 50%;
+}
+
+.bannerContent h3{
+  font-family: "Roboto Slab", serif;
+  font-style: 26px;
+  font-weight: 500;
+  padding: 30px 0;
+}
+
+.bannerContent p{
+  font-style: 14px;
+  font-weight: 500;
+  color: #7B7B7B;
+}
+
+.bannerIcons{
+  text-align: center;
+}
+
+.bannerIcons .fb{
+  color: #1773ea;
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.bannerIcons .tw{
+  color: #1c9cea;
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.bannerIcons .ins{
+  color: #e7787e;
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.bannerIcons .ln{
+  color: #144679;
+  background-color: #fff;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.bannerIcons i:hover {
+  color: white;
+  background: linear-gradient(97deg, #fa5252, #dd2476);
+}
+
+.bannerBtn{
+  text-align: center;
+  font-size: 18px;
+  padding-top: 30px;
+  padding-bottom: 130px;
+}
+
+.bannerBtn a{
+  padding: 20px 25px;
+  background: linear-gradient(97deg, #fa5252, #dd2476);
+  color: #fff;
+  border-radius: 50px;
+}
+
+/* Banner Part CSS End  */
