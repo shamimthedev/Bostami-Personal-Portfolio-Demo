@@ -1,80 +1,56 @@
-/* ======================
-   BASE STYLES
-   ====================== */
+/* All Common CSS Start */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Added for better box model handling */
 }
 
 body {
   font-family: "Poppins", sans-serif;
-  overflow-x: hidden;
-  transition: background-color 0.3s ease;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   padding: 0;
-  line-height: 1.2;
+  line-height: 1.2; /* Changed from 0.8 for better readability */
 }
 
 a {
   text-decoration: none;
   display: inline-block;
 }
+/* All Common CSS End */
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* ======================
-   THEME STYLES
-   ====================== */
-/* Light Mode (Default) */
-body.light-mode {
-  background-color: #ffffff;
-  color: #333333;
-}
-
-/* Dark Mode */
-body.dark-mode {
-  background-color: #121212;
-  color: #ffffff;
-}
-
-.dark-mode .bannerContent p {
-  color: #b0b0b0;
-}
-
-/* ======================
-   NAVIGATION
-   ====================== */
+/* Header Part CSS Start */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 0;
-  z-index: 1000;
-  background-color: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  padding: 20px 0; /* Reduced from 50px for mobile */
+  z-index: 1000; /* Ensure navbar stays on top */
+  background-color: white; /* Added for mobile */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Added shadow for mobile */
 }
 
 .nav-link {
   font-size: 13px;
   font-weight: 500;
   background-color: #fff;
-  margin-right: 10px;
-  margin-bottom: 5px;
+  margin-right: 10px; /* Reduced from 15px */
+  margin-bottom: 5px; /* Added for mobile */
   border-radius: 10px;
-  transition: all 0.3s ease;
+  transition: 0.5s;
 }
 
 #navbarNav ul li a {
-  padding: 8px 12px;
+  padding: 8px 12px; /* Reduced from 10px 15px */
+}
+
+i {
+  font-size: 16px; /* Reduced from 18px */
+  margin-right: 5px; /* Reduced from 6px */
 }
 
 .nav-link:hover {
@@ -82,34 +58,22 @@ body.dark-mode {
   background: linear-gradient(97deg, #fa5252, #dd2476);
 }
 
-.navbar-collapse {
-  padding-top: 15px;
-}
-
-/* Mobile Controls */
-.mobile-controls {
-  order: 1;
-  display: flex;
-  align-items: center;
-}
-
-/* Theme Toggle */
 .navbar-toggle-icon {
   background-color: #fff;
-  height: 40px;
-  width: 40px;
+  height: 40px; /* Reduced from 50px */
+  width: 40px; /* Reduced from 50px */
   border-radius: 50%;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  margin-left: auto;
+  position: relative;
+  margin-left: auto; /* Added for better mobile positioning */
 }
 
 .navbar-toggle-icon i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: 18px;
-  transition: all 0.3s ease;
 }
 
 .navbar-toggle-icon:hover {
@@ -117,179 +81,21 @@ body.dark-mode {
   background: linear-gradient(97deg, #fa5252, #dd2476);
 }
 
-.d-none.d-lg-block.navbar-toggle-icon {
-  margin-left: 15px;
+/* Mobile menu adjustments */
+.navbar-collapse {
+  padding-top: 15px; /* Added space for mobile menu */
 }
 
-/* ======================
-   DARK MODE SPECIFIC STYLES
-   ====================== */
-.dark-mode .navbar {
-  background-color: #1a1a1a !important;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-}
-
-.dark-mode .navbar-brand img {
-  filter: brightness(0) invert(1);
-}
-
-.dark-mode .nav-link {
-  background-color: #2a2a2a;
-  color: #f0f0f0 !important;
-  border: 1px solid #3a3a3a;
-}
-
-.dark-mode .nav-link:hover {
-  color: white !important;
-  background: linear-gradient(97deg, #fa5252, #dd2476);
-  border-color: transparent;
-}
-
-.dark-mode .navbar-collapse {
-  background-color: #1a1a1a;
-}
-
-.dark-mode .navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-.dark-mode .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-.dark-mode .mobile-controls .navbar-toggle-icon {
-  background-color: #2a2a2a;
-  color: #f0f0f0;
-  border: 1px solid #3a3a3a;
-}
-
-.dark-mode .nav-link.active {
-  background: linear-gradient(97deg, #fa5252, #dd2476);
-  color: white !important;
-}
-
-/* ======================
-   BANNER SECTION
-   ====================== */
-#bannerPart {
-  background-image: url(../images/asset\ 3.jpeg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  padding-top: 80px;
-}
-
-.dark-mode #bannerPart {
-  background-blend-mode: overlay;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.bannerContent {
-  text-align: center;
-  padding-top: 100px;
-  padding-bottom: 25px;
-}
-
-.bannerContent img {
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-}
-
-.bannerContent h3 {
-  font-family: "Roboto Slab", serif;
-  font-size: 24px;
-  font-weight: 500;
-  padding: 20px 0;
-}
-
-.bannerContent p {
-  font-size: 14px;
-  font-weight: 500;
-  color: #7B7B7B;
-}
-
-.bannerIcons {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.bannerIcons i {
-  margin: 0 5px;
-  font-size: 14px;
-  padding: 8px 12px;
-  border-radius: 10px;
+#themeIcon {
+  color: inherit; /* Inherits from parent */
   transition: all 0.3s ease;
-}
-
-.bannerIcons .fb {
-  color: #1773ea;
-  background-color: #fff;
-}
-
-.bannerIcons .tw {
-  color: #1c9cea;
-  background-color: #fff;
-}
-
-.bannerIcons .ins {
-  color: #e7787e;
-  background-color: #fff;
-}
-
-.bannerIcons .ln {
-  color: #144679;
-  background-color: #fff;
-}
-
-.bannerIcons i:hover {
-  color: white;
-  background: linear-gradient(97deg, #fa5252, #dd2476);
-}
-
-.bannerBtn {
-  text-align: center;
-  font-size: 16px;
-  padding: 20px 0 60px;
-}
-
-.bannerBtn a {
-  padding: 15px 20px;
-  background: linear-gradient(97deg, #fa5252, #dd2476);
-  color: #fff;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-}
-
-.dark-mode .bannerIcons i {
-  background-color: #2d2d2d !important;
-}
-
-.dark-mode .bannerBtn a {
-  box-shadow: 0 4px 15px rgba(221, 36, 118, 0.3);
-}
-
-/* ======================
-   RESPONSIVE ADJUSTMENTS
-   ====================== */
-@media (max-width: 991.98px) {
-  .navbar-collapse {
-    order: 2;
-    width: 100%;
-  }
-  
-  .mobile-controls {
-    margin-left: auto;
-  }
 }
 
 @media (min-width: 992px) {
   .navbar {
-    padding-top: 50px;
-    background-color: transparent;
-    box-shadow: none;
+    padding-top: 50px; /* Original padding for desktop */
+    background-color: transparent; /* Remove bg color on desktop */
+    box-shadow: none; /* Remove shadow on desktop */
   }
   
   .navbar-collapse {
@@ -302,14 +108,117 @@ body.dark-mode {
     margin-left: 0;
   }
 }
+/* Header Part CSS End */
 
+/* Mobile Controls */
+.mobile-controls {
+  order: 1; /* Ensures it stays on the right */
+}
+
+/* Theme toggle adjustments */
+.navbar-toggle-icon {
+  background-color: #fff;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+/* Desktop specific toggle */
+.d-none.d-lg-block.navbar-toggle-icon {
+  margin-left: 15px;
+}
+
+/* Dark mode adjustments for mobile controls */
+.dark-mode .mobile-controls .navbar-toggle-icon {
+  background-color: #2d2d2d;
+}
+
+/* Ensure proper spacing */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    order: 2;
+    width: 100%;
+  }
+  
+  .mobile-controls {
+    margin-left: auto;
+  }
+}
+
+/* Banner Part CSS Start */
+#bannerPart {
+  background-image: url(../images/asset\ 3.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding-top: 80px; /* Added for fixed navbar */
+}
+
+.bannerContent {
+  text-align: center;
+  padding-top: 100px; /* Reduced from 200px */
+  padding-bottom: 25px;
+}
+
+.bannerContent img {
+  border-radius: 50%;
+  width: 150px; /* Added fixed width */
+  height: 150px; /* Added fixed height */
+  object-fit: cover; /* Ensure image maintains aspect ratio */
+}
+
+.bannerContent h3 {
+  font-family: "Roboto Slab", serif;
+  font-size: 24px; /* Fixed typo (style -> size) */
+  font-weight: 500;
+  padding: 20px 0; /* Reduced from 30px */
+}
+
+.bannerContent p {
+  font-size: 14px; /* Fixed typo (style -> size) */
+  font-weight: 500;
+  color: #7B7B7B;
+}
+
+.bannerIcons {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.bannerIcons i {
+  margin: 0 5px; /* Adjusted spacing */
+  font-size: 14px; /* Reduced icon size */
+  padding: 8px 12px; /* Reduced padding */
+}
+
+.bannerBtn {
+  text-align: center;
+  font-size: 16px; /* Reduced from 18px */
+  padding: 20px 0 60px; /* Adjusted padding */
+}
+
+.bannerBtn a {
+  padding: 15px 20px; /* Reduced from 20px 25px */
+  background: linear-gradient(97deg, #fa5252, #dd2476);
+  color: #fff;
+  border-radius: 50px;
+}
+
+/* Media Queries for Banner */
 @media (min-width: 768px) {
   #bannerPart {
-    padding-top: 0;
+    padding-top: 0; /* Reset for desktop */
   }
   
   .bannerContent {
-    padding-top: 200px;
+    padding-top: 200px; /* Original value for desktop */
   }
   
   .bannerContent img {
@@ -338,6 +247,7 @@ body.dark-mode {
   }
 }
 
+/* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .bannerContent img {
     width: 120px;
@@ -356,4 +266,132 @@ body.dark-mode {
   .bannerBtn a {
     padding: 12px 18px;
   }
+}
+/* Banner Part CSS End */
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-mode .navbar {
+  background-color: #1e1e1e !important;
+}
+
+.dark-mode .nav-link {
+  background-color: #2d2d2d;
+  color: #ffffff;
+}
+
+.dark-mode .navbar-toggle-icon {
+  background-color: #2d2d2d;
+}
+
+.dark-mode #bannerPart {
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dark-mode .bannerContent p {
+  color: #b0b0b0;
+}
+
+.dark-mode .bannerIcons i {
+  background-color: #2d2d2d !important;
+}
+
+.dark-mode .bannerBtn a {
+  box-shadow: 0 4px 15px rgba(221, 36, 118, 0.3);
+}
+
+/* Light Mode Styles (default) */
+body.light-mode {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+/* Update social icons for dark mode */
+.dark-mode .bannerIcons .fb {
+  color: #1773ea;
+  background-color: #2d2d2d;
+}
+
+.dark-mode .bannerIcons .tw {
+  color: #1c9cea;
+  background-color: #2d2d2d;
+}
+
+.dark-mode .bannerIcons .ins {
+  color: #e7787e;
+  background-color: #2d2d2d;
+}
+
+.dark-mode .bannerIcons .ln {
+  color: #144679;
+  background-color: #2d2d2d;
+}
+
+/* Update dark mode navbar styles */
+.dark-mode .navbar {
+  background-color: #1a1a1a !important;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .navbar-brand img {
+  filter: brightness(0) invert(1);
+}
+
+/* Improved menu items visibility */
+.dark-mode .nav-link {
+  background-color: #2a2a2a;
+  color: #f0f0f0 !important;
+  border: 1px solid #3a3a3a;
+}
+
+.dark-mode .nav-link:hover {
+  color: white !important;
+  background: linear-gradient(97deg, #fa5252, #dd2476);
+  border-color: transparent;
+}
+
+/* Mobile menu specific improvements */
+.dark-mode .navbar-collapse {
+  background-color: #1a1a1a;
+}
+
+.dark-mode .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Ensure dropdown menus (if any) are visible */
+.dark-mode .dropdown-menu {
+  background-color: #2a2a2a;
+  border: 1px solid #3a3a3a;
+}
+
+.dark-mode .dropdown-item {
+  color: #f0f0f0;
+}
+
+.dark-mode .dropdown-item:hover {
+  background-color: #3a3a3a;
+  color: white;
+}
+
+/* Mobile controls visibility */
+.dark-mode .mobile-controls .navbar-toggle-icon {
+  background-color: #2a2a2a;
+  color: #f0f0f0;
+  border: 1px solid #3a3a3a;
+}
+
+/* Improve contrast for active menu item */
+.dark-mode .nav-link.active {
+  background: linear-gradient(97deg, #fa5252, #dd2476);
+  color: white !important;
 }
