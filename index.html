@@ -11,9 +11,12 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <!-- Google Fonts End  -->
     <!-- FontAwesome CDN  -->
     <link
@@ -34,7 +37,7 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- Header Part Start  -->
+    <!-- Header Part Start -->
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand" href="#">
@@ -42,17 +45,25 @@
             <img src="images/asset 0.png" alt="logo" />
           </picture>
         </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
+
+        <!-- Mobile controls container -->
+        <div class="mobile-controls d-flex d-lg-none align-items-center">
+          <div class="navbar-toggle-icon me-2" id="themeToggle">
+            <i class="fa-solid fa-moon" id="themeIcon"></i>
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav m-auto">
             <li class="nav-item">
@@ -86,13 +97,16 @@
               >
             </li>
           </ul>
-          <div class="navbar-toggle-icon me-auto">
-            <i class="fa-solid fa-moon"></i>
+          <div
+            class="navbar-toggle-icon d-none d-lg-block"
+            id="themeToggleDesktop"
+          >
+            <i class="fa-solid fa-moon" id="themeIconDesktop"></i>
           </div>
         </div>
       </div>
     </nav>
-    <!-- Header Part End  -->
+    <!-- Header Part End -->
 
     <!-- Banner Part Start  -->
     <section id="bannerPart">
